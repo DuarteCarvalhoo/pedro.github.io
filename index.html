@@ -6,6 +6,7 @@
     <title>Pedro Carvalho – CV</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <!-- Dark mode toggle -->
@@ -14,14 +15,18 @@
     </div>
 
     <header>
-        <div class="container">
-            <h1>Pedro Carvalho</h1>
-            <h2>Software Engineer (.NET & Azure)</h2>
+        <div class="container header-content">
+            <div class="header-text">
+                <h1>Pedro Carvalho</h1>
+                <h2>Software Engineer (.NET & Azure)</h2>
+            </div>
             <div class="links">
-                <a href="mailto:teuemail@email.com">Email</a>
-                <a href="https://www.linkedin.com/in/teu-perfil" target="_blank">LinkedIn</a>
-                <a href="https://github.com/teu-github" target="_blank">GitHub</a>
-                <a href="/Pedro_Carvalho_CV.pdf" class="download-btn" download>Download CV</a>
+                <a href="https://mail.google.com/mail/?view=cm&to=duarte38carvalho@email.com" target="_blank">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+                <a href="https://www.linkedin.com/in/pedro-duarte-carvalho-099789199/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/DuarteCarvalhoo" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <a href="Pedro_Duarte_Carvalho_CV.pdf" class="download-btn" download><i class="fas fa-file-download"></i> Download CV</a>
             </div>
         </div>
     </header>
@@ -71,11 +76,10 @@
     </footer>
 
     <script>
-        // Dark mode toggle funcional
+        // Dark mode toggle
         const toggle = document.getElementById('toggle-dark');
         const body = document.body;
 
-        // Mantém preferência salva
         if(localStorage.getItem('dark') === 'true') {
             body.classList.add('dark');
         }

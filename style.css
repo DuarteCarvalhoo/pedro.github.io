@@ -1,65 +1,128 @@
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
 }
 
+/* BODY */
 body {
     background: #f4f6f8;
     color: #1f2933;
+    line-height: 1.6;
+    transition: background 0.3s, color 0.3s;
 }
 
+/* DARK MODE */
+body.dark {
+    background: #121212;
+    color: #f0f0f0;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    padding: 60px 20px 40px 20px;
+    background: #2563eb;
+    color: white;
+    border-radius: 0 0 20px 20px;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark header {
+    background: #1f2933;
+}
+
+/* HEADER TEXT */
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+header h2 {
+    font-weight: 400;
+    margin: 10px 0 20px;
+}
+
+/* LINKS */
+header .links a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 6px 12px;
+    border: 1px solid white;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+header .links a:hover {
+    background: white;
+    color: #2563eb;
+}
+
+/* DOWNLOAD BUTTON */
+.download-btn {
+    background: #facc15;
+    border-color: #fbbf24;
+    color: #1f2933;
+}
+
+.download-btn:hover {
+    background: #fbbf24;
+}
+
+/* DARK MODE LINKS */
+body.dark header .links a {
+    color: #a5b4fc;
+    border-color: #a5b4fc;
+}
+
+body.dark header .links a:hover {
+    background: #a5b4fc;
+    color: #1f2933;
+}
+
+/* CONTAINER */
 .container {
     max-width: 900px;
-    margin: 60px auto;
-    padding: 40px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    margin: 0 auto;
+    padding: 20px 30px;
 }
 
-.hero {
+/* SECTIONS */
+section {
     margin-bottom: 40px;
 }
 
-.hero h1 {
-    font-size: 2.5rem;
-}
-
-.hero h2 {
+section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
     color: #2563eb;
-    margin: 10px 0;
+    transition: color 0.3s;
 }
 
-.hero p {
-    margin-top: 15px;
-    max-width: 600px;
+body.dark section h3 {
+    color: #a5b4fc;
 }
 
-.links {
-    margin-top: 20px;
-}
-
-.links a {
-    margin-right: 15px;
-    text-decoration: none;
-    color: #2563eb;
-    font-weight: 500;
-}
-
-section {
-    margin-bottom: 30px;
-}
-
-h3 {
-    margin-bottom: 10px;
-}
-
+/* LISTS */
 ul {
     list-style: none;
+    padding-left: 0;
 }
 
+ul li {
+    margin-bottom: 12px;
+    transition: transform 0.3s;
+}
+
+ul li:hover {
+    transform: translateX(5px);
+}
+
+/* SKILLS */
 .skills {
     display: flex;
     flex-wrap: wrap;
@@ -72,4 +135,65 @@ ul {
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.skills li:hover {
+    background: #c7d2fe;
+    transform: scale(1.05);
+}
+
+body.dark .skills li {
+    background: #374151;
+    color: #f4f6f8;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #f4f6f8;
+    border-top: 1px solid #ddd;
+    transition: background 0.3s;
+}
+
+body.dark footer {
+    background: #1f2933;
+}
+
+footer a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* DARK MODE TOGGLE */
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.dark-mode-toggle button {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    header h2 {
+        font-size: 1.2rem;
+    }
+    .container {
+        padding: 15px 20px;
+    }
 }

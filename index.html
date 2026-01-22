@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pedro – Software Engineer</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedro Carvalho – CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main class="container">
-        <section class="hero">
-            <h1>Pedro</h1>
+    <!-- Dark mode toggle -->
+    <div class="dark-mode-toggle">
+        <button id="toggle-dark">🌙</button>
+    </div>
+
+    <header>
+        <div class="container">
+            <h1>Pedro Carvalho</h1>
             <h2>Software Engineer (.NET & Azure)</h2>
-            <p>
-                Engenheiro Informático com experiência em backend, microserviços
-                e soluções escaláveis no setor financeiro.
-            </p>
             <div class="links">
                 <a href="mailto:teuemail@email.com">Email</a>
-                <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/teu-perfil" target="_blank">LinkedIn</a>
+                <a href="https://github.com/teu-github" target="_blank">GitHub</a>
+                <a href="/Pedro_Carvalho_CV.pdf" class="download-btn" download>Download CV</a>
             </div>
-        </section>
+        </div>
+    </header>
 
+    <main class="container">
         <section>
             <h3>Experiência</h3>
             <ul>
                 <li>
-                    <strong>Back End Developer – ITSector</strong><br />
-                    .NET, Azure, microserviços, DDD, setor financeiro
+                    <strong>Back End Developer – ITSector</strong><br>
+                    Desenvolvimento de soluções escaláveis usando .NET e Azure, microserviços e DDD.
                 </li>
             </ul>
         </section>
@@ -46,10 +51,39 @@
 
         <section>
             <h3>Formação</h3>
-            <p>
-                Licenciatura e Mestrado em Engenharia Informática – FCTUC
-            </p>
+            <p>Licenciatura e Mestrado em Engenharia Informática – FCTUC</p>
+        </section>
+
+        <section>
+            <h3>Projetos / Extras</h3>
+            <ul>
+                <li>Aplicação de geração automática de horários com IA (Streamlit + OR-Tools)</li>
+                <li>Automação de tarefas com NUKE em projetos .NET</li>
+                <li>Transformação digital de processos internos no setor financeiro</li>
+            </ul>
         </section>
     </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Pedro Carvalho – <a href="mailto:teuemail@email.com">Contacte-me</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode toggle funcional
+        const toggle = document.getElementById('toggle-dark');
+        const body = document.body;
+
+        // Mantém preferência salva
+        if(localStorage.getItem('dark') === 'true') {
+            body.classList.add('dark');
+        }
+
+        toggle.addEventListener('click', () => {
+            body.classList.toggle('dark');
+            localStorage.setItem('dark', body.classList.contains('dark'));
+        });
+    </script>
 </body>
 </html>
